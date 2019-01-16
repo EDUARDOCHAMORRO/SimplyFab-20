@@ -18,12 +18,12 @@
 * Go to Z zero position to check the Z set up with the Z UP/DOWN hardware buttons on the modela.
 * Homing button to check the end limits of the machine.
 
-###1.Circuit Design
+### 1.Circuit Design
 
 1. Design your circuit on Fritzing or Eagle. File > Export > for production > PDF.
  as PNG with white background (and black fill for the circuit). The dpi should be 500.
 
-###2.Fab Modules
+### 2.Fab Modules
 1. Open [http://fabmodules.org/](http://fabmodules.org/)
 2. Click **input format**. Select **image (.png)**, and load the png that you just exported.
 3. Ensure the dpi is at least 500.
@@ -40,7 +40,7 @@
 
 
 
-###3.Sending RML to the machine
+### 3.Sending RML to the machine
 
 
 1. Open **RolandMDX_20ControlPanel.pde** or the compiled program version **RolandMDX_20ControlPanel**
@@ -53,7 +53,7 @@
 --
 
 
-###Troubleshooting
+### Troubleshooting
 
 1. *Nothing happens when I send the rml over.*  
 
@@ -70,7 +70,7 @@
 
 --
 
-###Tools Needed
+### Tools Needed
 
 1. *Mill Bits*
 	* Micro milling bit for PCB for the traces cut (0.0156" DIA 2FL SE AlTiN 1/64).[1/64 Flat Endmill](http://www.carbidedepot.com/00156in-DIA-2FL-SE-AlTiN-164-P180142.aspx)
@@ -90,7 +90,7 @@
 
 --
 
-###References
+### References
 
  - [Fab modules](http://fab.cba.mit.edu/content/processes/PCB/modela.html), how to make circuits on the Modela milling machine, also a good resource to setup and problem shoot the Modela.
  - [Media Lab Helsinki](http://mlab.taik.fi/paja/?p=1874), making PCB with Roland Modela MDX-20 (Eagle version). The website including rml guidelines and more are available as [.zip](http://mlab.taik.fi/paja/wp-content/uploads/2011/01/eagle_files4roland_modela.zip) file for download. The tutorial uses the [Eagle layout editor](http://www.cadsoftusa.com/eagle-pcb-design-software/) to design PCBs. If you're using Fritzing, [this](http://mlab.taik.fi/paja/?p=2768) is the guide.
