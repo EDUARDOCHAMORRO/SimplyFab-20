@@ -20,8 +20,7 @@
 
 ### 1.Circuit Design
 
-1. Design your circuit on Fritzing or Eagle. File > Export > for production > PDF.
- as PNG with white background (and black fill for the circuit). The dpi should be 500.
+1. Design your circuit on Fritzing or Eagle. File > Export > PNG with black background (and white fill for the circuit). The dpi should be 500.
 
 ### 2.Fab Modules
 1. Open [http://fabmodules.org/](http://fabmodules.org/)
