@@ -136,7 +136,7 @@ class Roland {
         this.y = values[1] + setZeroY;
         distance = int(dist(this.x, this.y, this.prevX, this.prevY));
         //println("Distance : " + distance);
-        sendme = "Z" + this.x + "," + this.y + "," + int(values1[2].substring(0,2)) + ";";
+        sendme = "Z" + this.x + "," + this.y + "," + values1[2];
        // println(int(values1[2].substring(0,2)));
         println(sendme);
        roland_port.write(sendme);
@@ -156,9 +156,9 @@ class Roland {
       
       // need to replace the below delay() with something smarter
       if (distance < 200) {
-        delay(distance*10);
+        delay(distance*10);//500
       } else {
-        delay(2000);
+        delay(distance*6);//2500
       }
       //println("X= : " + this.x);
       //println("Y= : " + this.y);

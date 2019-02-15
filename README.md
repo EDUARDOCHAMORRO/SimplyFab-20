@@ -1,12 +1,16 @@
 # SimplyFAB-20 - GUI for Roland MDX-20
 
+### V2.0 Release 15-02-2019
+- Mayor Bug fix on long coordinates positioning based on timing.
+- Keep the xy coordinates on file change.
+- Z coordinates cleaner read.
+
 ## Easy interface to control the Roland MDX-20
 
 *January 2019, by Eduardo Chamorro, Yiannis Romanos Vogdanis.Project started in 04-02-2016 by Mithru. *
 
 
 ![*Roland MDX-20 graphic user interface control panel*](img/screen.jpg)
-
 
 
 * Interface to send .rml files to the Roland MDX-20 in a friendly interface.
