@@ -9,6 +9,7 @@ class Roland {
   int offsetX;
   int offsetY;
   String sendme;
+  String sendme2;
   
   int prevX, prevY;
 
@@ -121,7 +122,22 @@ class Roland {
      int lastLine = lines.length;
      println(lines.length);
      //roland_port.write("PR;PR;VS4;!VZ4;!PZ0,80;!MC1;");
-     roland_port.write("PA;PA;VS4;!VZ4;!PZ0,80;!MC1;");
+     roland_port.write("PA;PA;VS4;!VZ4;!PZ0,400;!MC1;");
+     println("PA;PA;VS4;!VZ4;!PZ0,400;!MC1;");
+  
+    
+    
+   /* for (int i = 1; i < lines.length-1;) {
+     int[] values = int(split(lines[i].substring(1), ','));
+     String[]  values1 = split(lines[i].substring(1), ',');
+     println(values1[3]);
+     println(values1[4]);
+
+    }
+*/
+
+
+
      //roland_port.write("PU140,1630;");
     for (int i = 1; i < lines.length-1; i++) {
      // roland_port.write(lines[i+1]);
@@ -165,7 +181,14 @@ class Roland {
       this.prevX = this.x ;
       this.prevY = this.y;
     }
-  println(lines[lastLine-1]);
-  roland_port.write(lines[lastLine-1]);
+  //println(lines[lastLine-1]);
+  //roland_port.write(lines[lastLine-1]);
+  println("PU" + setZeroX + "," + setZeroY + ",");
+  roland_port.write("PU" + setZeroX + "," + setZeroY + ",");
+  sendme2 = "Z" + setZeroX + "," + setZeroY + "," +"0"+";";
+  println(sendme2);
+  roland_port.write(sendme2);
+  println("!MC0;");
+  roland_port.write("!MC0;");
   }
 }

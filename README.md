@@ -1,5 +1,10 @@
 # SimplyFAB-20 - GUI for Roland MDX-20
 
+### V2.5 Release 20-02-2019
+- Fix on origin XY set.
+- End code modified.
+- To do: heritage speed from file
+
 ### V2.0 Release 15-02-2019
 - Mayor Bug fix on long coordinates positioning based on timing.
 - Keep the xy coordinates on file change.
