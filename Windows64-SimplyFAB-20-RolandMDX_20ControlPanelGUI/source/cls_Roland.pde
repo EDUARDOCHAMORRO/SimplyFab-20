@@ -112,31 +112,33 @@ class Roland {
  
  }
 
-  void sendRMLFile(String path) {
-     println("X= : " + this.x);
-     println("Y= : " + this.y);
-     setZeroX = this.x;
-     setZeroY = this.y;
-     delay(2000);
-     String lines[] = loadStrings(path);
-     int lastLine = lines.length;
-     println(lines.length);
-     //roland_port.write("PR;PR;VS4;!VZ4;!PZ0,80;!MC1;");
-     roland_port.write("PA;PA;VS4;!VZ4;!PZ0,400;!MC1;");
-     println("PA;PA;VS4;!VZ4;!PZ0,400;!MC1;");
+void sendRMLFile(String path) {
+  //setZeroX = readjustZeroX ;
+  //setZeroY = readjustZeroY;
+   roland.moveXYZ( readjustZeroX, readjustZeroY, roland.z);
+   println( readjustZeroX, readjustZeroY, roland.z);
+   println("X= : " + this.x);
+   println("Y= : " + this.y);
+   setZeroX = this.x;
+   setZeroY = this.y;
+   delay(2000);
+   String lines[] = loadStrings(path);
+   int lastLine = lines.length;
+  // println(lines.length);
+   
+  //IGNORE THE FIRST LINE AND GET THE SPEEDS FROM THE FILE//
+ // println(lines[0]);
+  String[] values3 = split(lines[0].substring(0), ';');  // Get value VS (vertical speed)
+  //println(values3);
+  String getVS = values3[2].substring(2);
+  float VsToFloat = float(getVS);
   
-    
-    
-   /* for (int i = 1; i < lines.length-1;) {
-     int[] values = int(split(lines[i].substring(1), ','));
-     String[]  values1 = split(lines[i].substring(1), ',');
-     println(values1[3]);
-     println(values1[4]);
-
-    }
-*/
-
-
+ //println(VsToFloat);
+ 
+ String sendFirstLineWithSpeeds = "PA;PA;VS" + VsToFloat + ";!VZ" + VsToFloat + ";!PZ0,400;!MC1;";
+ println(sendFirstLineWithSpeeds);
+ roland_port.write(sendFirstLineWithSpeeds);
+ 
 
      //roland_port.write("PU140,1630;");
     for (int i = 1; i < lines.length-1; i++) {
@@ -171,10 +173,14 @@ class Roland {
       }
       
       // need to replace the below delay() with something smarter
-      if (distance < 200) {
-        delay(distance*10);//500
+      float  speed = 1;
+      speed = float(getVS) * 10;
+      println(speed); 
+      if (speed <= 10) {
+        //speed = int(getVS);
+        delay(int(distance* 20/ (speed / 10) ));//2500
       } else {
-        delay(distance*6);//2500
+        delay(int(distance * 2 *(speed / 10)  ));//2500
       }
       //println("X= : " + this.x);
       //println("Y= : " + this.y);
@@ -183,11 +189,20 @@ class Roland {
     }
   //println(lines[lastLine-1]);
   //roland_port.write(lines[lastLine-1]);
-  println("PU" + setZeroX + "," + setZeroY + ",");
-  roland_port.write("PU" + setZeroX + "," + setZeroY + ",");
+  println("PU" + setZeroX + "," + setZeroY + ";");
+  roland_port.write("PU" + setZeroX + "," + setZeroY + ";");
   sendme2 = "Z" + setZeroX + "," + setZeroY + "," +"0"+";";
   println(sendme2);
   roland_port.write(sendme2);
+ // roland_port.write("PA;PA;!PZ0,0;!MC0;");
+  //println("PA;PA;!PZ0,0;!MC0;");
+  roland.setZeroX = readjustZeroX ;
+  roland.setZeroY = readjustZeroY;
+  println(readjustZeroX);
+      print("New Machine zero = ");    
+      print(roland.setZeroX);    
+      print("  ");
+      println(roland.setZeroY);
   println("!MC0;");
   roland_port.write("!MC0;");
   }

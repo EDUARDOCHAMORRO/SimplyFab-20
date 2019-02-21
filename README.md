@@ -1,5 +1,9 @@
 # SimplyFAB-20 - GUI for Roland MDX-20
 
+### V3.0 Release 21-02-2019
+- Fix reltive coordinates
+- wait delay now related to file speed and point to point distance
+
 ### V2.5 Release 20-02-2019
 - Fix on origin XY set.
 - End code modified.
