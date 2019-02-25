@@ -63,6 +63,9 @@
 
 
 --
+### Roland RML format
+
+![](RolandCommandGuide.png)
 
 
 ### Troubleshooting
