@@ -178,7 +178,7 @@ void sendRMLFile(String path) {
       println(speed); 
       if (speed <= 10) {
         //speed = int(getVS);
-        delay(int(distance* 20/ (speed / 10) ));//2500
+        delay(int(distance* 40/ (speed / 10) ));//2500
       } else {
         delay(int(distance * 2 *(speed / 10)  ));//2500
       }
