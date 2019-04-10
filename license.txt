@@ -1,6 +1,6 @@
 Beans Reels Design	CC BY-NC-SA
 
-(c)2016  Eduardo Chamorro "eduardochamorromartin@gmail.com"
+(c)2018  Eduardo Chamorro "eduardochamorromartin@gmail.com"
 
 
 This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
@@ -16,7 +16,7 @@ Under the following terms:
     NonCommercial — You may not use the material for commercial purposes.
     ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
 No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
-as long as they credit you and license their new creations under the identical terms. 
+as long as they credit you and license their new creations under the identical terms.
 
 LICENSE
 
